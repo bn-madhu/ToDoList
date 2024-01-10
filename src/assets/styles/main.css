@@ -1,0 +1,501 @@
+body {
+  background-color: #f1f1f2;
+  color: #0541f6;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn:active,
+.btn:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.btn{
+  cursor: pointer;
+  padding: var(--size_xs) var(--size);
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: var(--size_2xs);
+  text-align: center;
+  font-size: var(--size_sm);
+  line-height: var(--size_sm);
+  font-weight: var(--fw);
+  transition: all var(--duration);
+  position: relative;
+}
+
+.btn + .btn:not(:first-child){
+  margin: 0px 0px 0px 2px;
+}
+
+/* main details */
+.btn.primary{
+  background: var(--primary);
+  color: var(--primaryContra);
+  border-color: var(--active);
+}
+.btn.secondary{
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--primary);
+}
+.btn.warning{
+  background: var(--warning);
+  color: var(--white);
+  border-color: var(--warning_light);
+}
+.btn.success{
+  background: var(--success);
+  color: var(--white);
+  border-color: var(--success_light);
+}
+.btn.danger{
+  border: 1px solid var(--danger) !important;
+  background: var(--danger);
+  color: var(--white);
+}
+
+.btn.gray{
+  background: transparent;
+  color: var(--black);
+  border: none;
+}
+.btn.gray:hover{
+  background: var(--gray500);
+}
+
+/* hover */
+.btn.primary:hover,
+.btn.primary:focus{
+  background: var(--primaryHover);
+  border-color: var(--primary);
+}
+.btn.secondary:hover,
+.btn.secondary:focus{
+  background: var(--white);
+  color: var(--active);
+  border-color: var(--active);
+}
+.btn.only-icon:focus{
+  background: var(--gray200);
+}
+.btn.secondary:hover i.fa{
+  color: var(--active) !important;
+}
+.btn.warning:hover{
+  background: var(--warningHover);
+  border-color: var(--warning);
+  color: var(--black);
+}
+.btn.success:hover{
+  background: var(--successHover);
+  border-color: var(--success);
+}
+.btn.danger:hover{
+  background: #83252e !important;
+  border-color: var(--danger_light);
+}
+
+/* color = Secondary */
+.btn.warning.secondary{
+  background: var(--white);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+.btn.success.secondary{
+  background: var(--white);
+  color: var(--success);
+  border-color: var(--success);
+}
+.btn.danger.secondary{
+  background: var(--white);
+  color: var(--danger);
+  border-color: var(--danger);
+}
+/* secondary+color:hover */
+.btn.warning.secondary:hover{
+  color: var(--white);
+  background: var(--warning);
+  border-color: var(--warning);
+}
+.btn.success.secondary:hover{
+  color: var(--white);
+  background: var(--success);
+  border-color: var(--success);
+}
+.btn.danger.secondary:hover{
+  color: var(--white);
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+/* disabled hover */
+.btn.primary.disabled,
+.btn.primary.disabled:hover,
+.btn.secondary.disabled,
+.btn.secondary.disabled:hover,
+.btn.success.disabled,
+.btn.success.disabled:hover,
+.btn.warning.disabled,
+.btn.warning.disabled:hover,
+.btn.danger.disabled,
+:disabled,
+.btn.danger.disabled:hover{
+  background: var(--gray300) !important;
+  color: var(--gray500) !important;
+  border-color: var(--gray300) !important;
+  cursor: no-drop !important;
+  opacity:1;
+}
+.btn.primary.disabled:has(svg) svg .fill-black,
+.btn.primary.disabled:hover:has(svg) svg .fill-black,
+.btn.secondary.disabled:has(svg) svg .fill-black,
+.btn.secondary.disabled:hover:has(svg) svg .fill-black,
+.btn.success.disabled:has(svg) svg .fill-black,
+.btn.success.disabled:hover:has(svg) svg .fill-black,
+.btn.warning.disabled:has(svg) svg .fill-black,
+.btn.warning.disabled:hover:has(svg) svg .fill-black,
+.btn.danger.disabled:has(svg) svg .fill-black,
+.btn.danger.disabled:hover:has(svg) svg .fill-black,
+.btn.primary.disabled:has(svg) svg .fill-white,
+.btn.primary.disabled:hover:has(svg) svg .fill-white,
+.btn.secondary.disabled:has(svg) svg .fill-white,
+.btn.secondary.disabled:hover:has(svg) svg .fill-white,
+.btn.success.disabled:has(svg) svg .fill-white,
+.btn.success.disabled:hover:has(svg) svg .fill-white,
+.btn.warning.disabled:has(svg) svg .fill-white,
+.btn.warning.disabled:hover:has(svg) svg .fill-white,
+.btn.danger.disabled:has(svg) svg .fill-white,
+:disabled,
+.btn.danger.disabled:hover:has(svg) svg .fill-white{
+  fill: var(--black) !important;
+}
+
+.btn.primary.disabled:has(svg) svg .stroke-black,
+.btn.primary.disabled:hover:has(svg) svg .stroke-black,
+.btn.secondary.disabled:has(svg) svg .stroke-black,
+.btn.secondary.disabled:hover:has(svg) svg .stroke-black,
+.btn.success.disabled:has(svg) svg .stroke-black,
+.btn.success.disabled:hover:has(svg) svg .stroke-black,
+.btn.warning.disabled:has(svg) svg .stroke-black,
+.btn.warning.disabled:hover:has(svg) svg .stroke-black,
+.btn.danger.disabled:has(svg) svg .stroke-black,
+.btn.danger.disabled:hover:has(svg) svg .stroke-black,
+.btn.primary.disabled:has(svg) svg .stroke-white,
+.btn.primary.disabled:hover:has(svg) svg .stroke-white,
+.btn.secondary.disabled:has(svg) svg .stroke-white,
+.btn.secondary.disabled:hover:has(svg) svg .stroke-white,
+.btn.success.disabled:has(svg) svg .stroke-white,
+.btn.success.disabled:hover:has(svg) svg .stroke-white,
+.btn.warning.disabled:has(svg) svg .stroke-white,
+.btn.warning.disabled:hover:has(svg) svg .stroke-white,
+.btn.danger.disabled:has(svg) svg .stroke-white,
+:disabled,
+.btn.danger.disabled:hover:has(svg) svg .stroke-white{
+  stroke: var(--black) !important;
+}
+
+
+
+/* btn has link */
+.btn.has-link,
+.btn.has-link a{
+  text-decoration: none;
+  color: var(--active) !important;
+  border: none;
+}
+.btn.has-link:hover,
+.btn.has-link:hover a{
+  color: var(--activeHover) !important;
+  text-decoration: underline;
+}
+.btn.has-link.primary{
+  color: var(--white) !important;
+}
+.btn.has-link.primary:hover,
+.btn.has-link.primary:hover a{
+  color: var(--white) !important;
+  text-decoration: underline;
+}
+
+.btn-group>.btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group:not(:last-child)>.btn,
+.btn-group>.btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+/* active */
+.btn.primary:active{
+  background: var(--active);
+  outline: 0px 0px 5px var(--active);
+}
+.btn.secondary:active{
+  color: var(--active);
+  outline: 0px 0px 5px var(--active);
+}
+
+/* Radius */
+.radius-sm{
+  border-radius: var(--radius_sm) !important;
+}
+.radius{
+  border-radius: var(--radius) !important;
+}
+.radius-lg{
+  border-radius: var(--radius_lg) !important;
+}
+.rounded{
+  border-radius: var(--rounded) !important;
+}
+
+
+/* button size */
+.btn.xs{
+  padding: var(--size_3xs) var(--size_xs);
+  font-size: 12px;
+}
+.btn.sm{
+  padding: var(--size_3xs) var(--size_sm);
+  font-size: 12px;
+}
+.btn.only-icon.rounded:not(.primary):hover {
+  background: var(--gray200);
+}
+.btn.only-icon.rounded.active-icon{
+  background: var(--gray200);
+  padding: var(--size_xs) !important;
+}
+.btn.only-icon.rounded.active-icon:hover{
+  background: var(--active);
+}
+.btn.only-icon.rounded {
+  height: fit-content;
+  padding: 12px !important;
+}
+.btn.only-icon.rounded.lg {
+  height: fit-content;
+  padding: var(--size_md) !important;
+}
+@media (max-width: 1488px) {
+  .btn.only-icon.rounded.lg {
+    padding: var(--size_md) var(--size_mdl) !important;
+  }
+}
+.btn.xs.rounded{
+  padding: var(--size_xs) !important;
+}
+.btn.capsule.xs{
+  padding: var(--size_3xs) var(--size_xs);
+  height: fit-content;
+}
+.btn.capsule.sm{
+  height: fit-content;
+}
+.btn.capsule{
+  box-shadow: none;
+  border-radius: var(--size);
+  padding: 6px 18px;
+}
+.btn.capsule.lg{
+  border-radius: var(--size_lg);
+  padding: var(--size_xs) var(--size_lg) !important;
+  height: fit-content;
+  width: auto;
+}
+.btn.capsule.only-icon.lg svg{
+  vertical-align: middle;
+}
+
+/* spaces */
+.btn.has-icon,
+.btn.has-right-icon,
+.btn.has-left-icon{
+  display: inline-flex;
+  align-items: center;
+}
+.btn.has-right-icon span,
+.btn.has-right-icon svg{
+  display: inline-block;
+  margin-left: var(--size_2xs);
+}
+.btn.has-left-icon span,
+.btn.has-left-icon svg{
+  display: inline-block;
+  margin-right: var(--size_2xs);
+}
+
+.btn.only-icon.rounded.sm:has(svg){
+  padding: var(--size_sm) !important;
+}
+
+.btn svg{
+  min-width: 14px;
+  width: 14px;
+  height: auto;
+  display: block;
+}
+.btn.sm svg{
+  min-width: 12px;
+  width: 12px;
+  height: auto;
+  display: block;
+}
+.btn.xs svg{
+  min-width: 10px;
+  width: 10px;
+  height: auto;
+  display: block;
+}
+
+.btn.capsule svg line,
+.btn:has(svg) svg line{
+  stroke-width: 4px;
+}
+
+/* btn svg */
+.btn:not(.secondary) svg .fill-white{
+  fill: var(--white) !important;
+  transition: all var(--duration);
+}
+.btn.warning svg .fill-white{
+  fill: var(--black) !important;
+  transition: all var(--duration);
+}
+.btn:has(svg .stroke-white):hover svg .stroke-white,
+.btn:has(svg .fill-white):hover svg .fill-white{
+  stroke: var(--white) !important;
+  fill: var(--white) !important;
+  transition: all var(--duration);
+}
+.btn:has(svg .stroke-white):hover svg .stroke-white{
+  stroke: var(--white) !important;
+  transition: all var(--duration);
+}
+.btn:has(svg .stroke-black):hover svg .stroke-black,
+.btn:has(svg .fill-black):hover svg .fill-black{
+  stroke: var(--active) !important;
+  fill: var(--active) !important;
+  transition: all var(--duration);
+}
+.btn:has(svg .stroke-black):hover svg .stroke-black{
+  stroke: var(--black) !important;
+  transition: all var(--duration);
+}
+.btn.disabled:has(svg .stroke-black):hover svg .stroke-black,
+.btn.disabled:has(svg .fill-black):hover svg .fill-black{
+  stroke: var(--black) !important;
+  fill: var(--black) !important;
+  transition: all var(--duration);
+}
+.btn.disabled:has(svg .stroke-white):hover svg .stroke-white,
+.btn.disabled:has(svg .fill-white):hover svg .fill-white{
+  stroke: var(--black) !important;
+  fill: var(--black) !important;
+  transition: all var(--duration);
+}
+
+.btn.secondary svg .fill-white,
+.btn.secondary svg .stroke-white{
+  fill: var(--black);
+  stroke: var(--black);
+}
+.btn.secondary:has(svg .stroke-white):hover svg .stroke-white {
+  stroke: var(--active) !important;
+  transition: all var(--duration);
+}
+.btn.secondary.danger:has(svg .stroke-white):hover svg .stroke-white {
+  stroke: var(--white) !important;
+  transition: all var(--duration);
+}
+
+.btn.danger.capsule.only-icon.secondary svg{
+  vertical-align: top;
+}
+.btn.danger.capsule.only-icon.secondary.sm svg{
+  vertical-align: middle;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+.mr-1 {
+  margin-right: 4px;
+}
+.ml-1 {
+  margin-left: 4px;
+}
+
+input {
+  height: 36px;
+  padding: 0 8px;
+  border-radius: 4px;
+  border: 2px solid #808080;
+}
+.todo-wrapper {
+  padding: 16px;
+  width: auto;
+  margin: 0 auto 16px auto;
+  max-height: 100dvh;
+  overflow: auto;
+  box-shadow: 0px 3px 5px #000;
+  border: 1px solid green;
+  border-radius: 8px;
+}
+
+.list-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 8px 0;
+  text-align: left;
+}
+
+.list-description {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+.todo-list-item {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--gray500);
+}
+
+.todolist-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 8px;
+}
